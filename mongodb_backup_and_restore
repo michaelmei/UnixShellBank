@@ -1,0 +1,20 @@
+root@localhost:~# cat backupCollection.sh
+mongodump --collection $1 --db DBViz --out ~/dbbakup
+
+root@localhost:~# cat backupDB.sh
+mongodump --db DBViz --out ~/dbbakup
+
+root@localhost:~# cat cleanbackup.sh
+rm -rf ~/dbbakup/*
+
+root@localhost:~# cat restoreCollectionMerge.sh
+mongorestore --db DBViz --collection $1 ~/dbbakup/DBViz/$1.bson
+
+root@localhost:~# cat restoreCollectionOverwrite.sh
+mongorestore --db DBViz --drop --collection $1 ~/dbbakup/DBViz/$1.bson
+
+root@localhost:~# cat restoreMerge.sh
+mongorestore --db DBViz ~/dbbakup/DBViz
+
+root@localhost:~# cat restoreOverwrite.sh
+mongorestore --db DBViz --drop ~/dbbakup/DBViz
