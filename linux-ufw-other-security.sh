@@ -42,7 +42,7 @@ sudo ufw status verbose
 #MORE FROM https://help.ubuntu.com/community/UFW
 
 #DISABLE PING
-#Step 1: Edit the sysctl.conf file and add the following line.
+#Step 1: Edit the /etc/sysctl.conf file and add the following line.
 net.ipv4.icmp_echo_ignore_all = 1
 
 #Step 2: Execute sysctl -p to enforce this setting immediately.
