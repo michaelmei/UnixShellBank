@@ -25,7 +25,7 @@ sudo service mongod start
 
 
 #AFTER LOGIN TO THE SYSTEM
-mongo 127.0.0.1:28000
+mongo 127.0.0.1:*****
 
 #Setup user roles
 db.createUser({user:"****", pwd:"****",roles:["readWrite","userAdminAnyDatabase"]})
