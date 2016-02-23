@@ -14,3 +14,6 @@ sudo make install
 
 cd utils
 sudo ./install_server.sh
+
+#restart redis
+sudo service redis_6379 restart
