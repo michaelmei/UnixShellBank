@@ -2,10 +2,10 @@ sudo apt-get install ufw
 sudo ufw disable
 sudo ufw enable
 
-# We are doing incoming white-list
-sudo ufw default allow incoming
-# We are doing outgoing black-list
-sudo ufw default deny outgoing
+# We are deny incoming
+sudo ufw default deny incoming
+# We are allow outgoing
+sudo ufw default allow outgoing
 
 #ssh
 sudo ufw allow 22/tcp
@@ -36,4 +36,8 @@ sudo ufw allow from 192.168.1.0/24
 #allow IP address 192.168.0.4 access to port 22 using TCP
 sudo ufw allow from 192.168.0.4 to any port 22 proto tcp
 
+#check all status
+sudo ufw status verbose
+
 #MORE FROM https://help.ubuntu.com/community/UFW
+
