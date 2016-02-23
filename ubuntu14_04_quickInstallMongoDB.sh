@@ -23,3 +23,10 @@ echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 
 sudo service mongod start
 
+
+#AFTER LOGIN TO THE SYSTEM
+mongo 127.0.0.1:28000
+
+#Setup user roles
+db.createUser({user:"admin_name", pwd:"1234",roles:["readWrite","dbAdmin"]})
+
