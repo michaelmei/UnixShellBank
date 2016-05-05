@@ -5,9 +5,9 @@ sudo apt-get update
 ###############The IPv6 setting for the network were ignored, but disabling IPv6 via /etc/sysctl.conf worked:
 #Add the following lines at the bottom of /etc/sysctl.conf:
 ########################################################################################################################
-net.ipv6.conf.all.disable_ipv6 = 1
-net.ipv6.conf.default.disable_ipv6 = 1
-net.ipv6.conf.lo.disable_ipv6 = 1
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
 sudo sysctl -p
 
 
