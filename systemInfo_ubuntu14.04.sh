@@ -16,4 +16,9 @@ top -bn1 | grep "Cpu(s)" | \
 df -h | grep "/$" | awk '//{printf("size:%s,used:%s,available:%s\n"), $2, $3, $4}'
 
 #get the network info
-
+#Accumulated transmitted bytes/packets
+cat /sys/class/net/eth0/statistics/tx_packets
+cat /sys/class/net/eth0/statistics/tx_bytes
+#Accumulated received bytes/packets
+cat /sys/class/net/eth0/statistics/rx_bytes
+cat /sys/class/net/eth0/statistics/rx_packets
