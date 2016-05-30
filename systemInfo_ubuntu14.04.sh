@@ -46,4 +46,5 @@ top -bn1 | grep "Cpu(s)" | \
            awk '{print 100 - $1"%"}'
 
 
-
+#get the disk info
+df -h
