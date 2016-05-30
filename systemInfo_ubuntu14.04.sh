@@ -37,9 +37,9 @@
 #DirectMap2M:     2082816 kB
 #DirectMap1G:           0 kB
 cat /proc/meminfo
-free | awk '/Mem/{printf("used: %.2f%"), $3/$2*100} 
-/buffers\/cache/{printf(", buffers: %.2f%"), $4/($3+$4)*100} 
-/Swap/{printf(", swap: %.2f%"), $3/$2*100}'
+free -m | awk '/Mem/{printf("TotalRam:%s,UsedRam:%s,"), $2, $3} 
+/buffers\/cache/{printf("usedBuffers:%s,freeBuffers:%s,"), $3, $4} 
+/Swap/{printf("totalSwap:%s,usedSwap:%s\n"), $2, $3}'
 
 
 #get the total cpu usage 
