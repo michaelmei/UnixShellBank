@@ -47,4 +47,5 @@ top -bn1 | grep "Cpu(s)" | \
 
 
 #get the disk info
-df -h
+#df -h
+df -h | grep "/$" | awk '//{printf("size:%s,used:%s,available:%s\n"), $2, $3, $4}'
