@@ -43,5 +43,6 @@ xvfb-run testem -l chrome
 
 
 http://peter.sh/experiments/chromium-command-line-switches/
+chromium --load-extension
 
 http://elementalselenium.com/tips/29-chrome-driver
