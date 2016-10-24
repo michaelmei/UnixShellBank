@@ -51,7 +51,9 @@ xvfb-run testem -l firefox
 xvfb-run testem -l chrome
 
 
-http://peter.sh/experiments/chromium-command-line-switches/
-chromium --load-extension
+#http://peter.sh/experiments/chromium-command-line-switches/
+#chromium --load-extension
 
-http://elementalselenium.com/tips/29-chrome-driver
+#https://sites.google.com/site/mygwtexamples/home/testing/headless-running
+
+#http://elementalselenium.com/tips/29-chrome-driver
