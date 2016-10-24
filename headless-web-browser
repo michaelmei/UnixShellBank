@@ -1,0 +1,42 @@
+#Installing Xvbf
+#######################################################################################
+
+#If you are running Debian or Ubuntu and are using apt-get, installing is simply as:
+apt-get install xvfb
+
+#If you are on CentOS and using yum, it's
+yum install xorg-X11-server-Xvfb
+
+
+#Installing the Browsers
+#######################################################################################
+
+#On Ubuntu, I found installing Chrome and Firefox painless.
+#For Chrome simply go to the Chrome download page, download the .deb file, then do dpkg -i <the path to the .deb file> to install.
+#For Firefox, it's just apt-get install firefox.
+
+#On CentOS, I have had more trouble.
+#For starters, Chrome is not supported on CentOS and I haven't even found a simply way to build Chrominum and I gave up.
+#Installing firefox also had a little hiccup: I ran yum install firefox, but then running firefox resulted in an error, which I solved by also installing gdk-pixbuf2 via yum install gdk-pixbuf2.
+#If you are on other Linux distros I haven't mentoned, checkout the Chrome download page and the Firefox on Linux page.
+
+
+#Xvfb Usage
+#######################################################################################
+
+#The usage of Xvfb is:
+xvfb-run <some command>
+
+#That's all you need to know! For example, you can run Firefox within Xvfb:
+xvfb-run firefox http://google.com
+#This should just start a firefox process in the background. You may see a cryptic warning in the terminal, but otherwise it's not very exciting because you don't actually see anything.
+
+
+#If you use Testem to run tests, you can do:
+#######################################################################################
+
+#to run your tests in Firefox or
+xvfb-run testem -l firefox
+
+#to run them in Chrome - headless!
+xvfb-run testem -l chrome
