@@ -11,8 +11,17 @@ yum install xorg-X11-server-Xvfb
 #Installing the Browsers
 #######################################################################################
 
-#On Ubuntu, I found installing Chrome and Firefox painless.
-#For Chrome simply go to the Chrome download page, download the .deb file, then do dpkg -i <the path to the .deb file> to install.
+#if you want the actual Google Chrome, open a terminal and follow:
+#The 32-bit version is no longer available.
+
+cd /tmp
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+#If you encounter any errors simply use
+sudo apt-get -f install
+
+
 #For Firefox, it's just apt-get install firefox.
 
 #On CentOS, I have had more trouble.
