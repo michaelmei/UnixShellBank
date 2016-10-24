@@ -42,7 +42,6 @@ xvfb-run testem -l firefox
 xvfb-run testem -l chrome
 
 
-
-
+http://peter.sh/experiments/chromium-command-line-switches/
 
 http://elementalselenium.com/tips/29-chrome-driver
