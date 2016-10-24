@@ -40,3 +40,9 @@ xvfb-run testem -l firefox
 
 #to run them in Chrome - headless!
 xvfb-run testem -l chrome
+
+
+
+
+
+http://elementalselenium.com/tips/29-chrome-driver
