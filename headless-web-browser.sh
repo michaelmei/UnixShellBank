@@ -22,33 +22,24 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt-get -f install
 
 
-#For Firefox, it's just apt-get install firefox.
-
-#On CentOS, I have had more trouble.
-#For starters, Chrome is not supported on CentOS and I haven't even found a simply way to build Chrominum and I gave up.
-#Installing firefox also had a little hiccup: I ran yum install firefox, but then running firefox resulted in an error, which I solved by also installing gdk-pixbuf2 via yum install gdk-pixbuf2.
-#If you are on other Linux distros I haven't mentoned, checkout the Chrome download page and the Firefox on Linux page.
-
-
-#Xvfb Usage
+#http://www.leonardteo.com/2011/07/taking-server-side-screenshots-of-websites/
 #######################################################################################
+#I’ll assume that you did the apt-get install to get both Firefox and flash-plugin. Once you have those, test the configuration like this…
 
-#The usage of Xvfb is:
-xvfb-run <some command>
+#Make sure that the xvfb server is running
+#Run this: 
+DISPLAY=:5 nohup firefox http://www.youtube.com &
+nohup google-chrome --display=$DISPLAY --screenshots https://www.google.com &
+ 
+#Explanation:
+#DISPLAY=:5 This tells xvfb to render to display 5 (virtual) nohup silence the output firefox loads firefox http://youtube.com loads youtube which tells you whether you have Flash or not & Load this in the background
+#Firefox should be running in the background now. If it’s not, you may have to debug and find out why. Remove the nohup and the & to see the output to shell if you need to debug.
+#Now comes the moment of truth. Taking a screenshot:
 
-#That's all you need to know! For example, you can run Firefox within Xvfb:
-xvfb-run firefox http://google.com
-#This should just start a firefox process in the background. You may see a cryptic warning in the terminal, but otherwise it's not very exciting because you don't actually see anything.
 
-
-#If you use Testem to run tests, you can do:
-#######################################################################################
-
-#to run your tests in Firefox or
-xvfb-run testem -l firefox
-
-#to run them in Chrome - headless!
-xvfb-run testem -l chrome
+DISPLAY=:5 import -window root screenshot.png
+#This will dump the desktop to screenshot.png. Check it.
+#Kill firefox by typing fg then CTRL+C.
 
 
 #http://peter.sh/experiments/chromium-command-line-switches/
