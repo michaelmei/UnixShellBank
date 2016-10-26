@@ -1,11 +1,11 @@
-#Installing Xvbf
+#http://www.leonardteo.com/2011/07/taking-server-side-screenshots-of-websites/
 #######################################################################################
 
-#If you are running Debian or Ubuntu and are using apt-get, installing is simply as:
-apt-get install xvfb
+#Installing Xvbf and screenshot tool
+#######################################################################################
 
-#If you are on CentOS and using yum, it's
-yum install xorg-X11-server-Xvfb
+sudo apt-get install xvfb
+sudo apt-get install imagemagick
 
 
 #Installing the Browsers
@@ -22,8 +22,69 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt-get -f install
 
 
-#http://www.leonardteo.com/2011/07/taking-server-side-screenshots-of-websites/
+#Create a file in /etc/init.d called xvfb. Put this in:
 #######################################################################################
+
+#!/bin/bash
+#
+# /etc/rc.d/init.d/xvfb
+#
+# chkconfig: 345 98 90
+# description: starts virtual framebuffer process to
+# enable server
+#
+#
+#
+# Source function library.
+#.  /etc/init.d/functions
+XVFB_OUTPUT=/tmp/Xvfb.out
+XVFB=/usr/bin/X11/Xvfb
+XVFB_OPTIONS=":5 -screen 0 1080x1440x24 -fbdir /var/run"
+
+start()  {
+echo -n "Starting : X Virtual Frame Buffer "
+$XVFB $XVFB_OPTIONS >>$XVFB_OUTPUT 2>&1&;
+RETVAL=$?
+echo
+return $RETVAL
+}
+
+stop()   {
+echo -n "Shutting down : X Virtual Frame Buffer"
+echo
+killall Xvfb
+echo
+return 0
+}
+
+case "$1" in
+start)
+start
+;;
+stop)
+stop
+;;
+status)
+status xvfb
+;;
+restart)
+    stop
+    start
+    ;;
+
+*)
+echo "Usage: xvfb {start|stop|status|restart}"
+exit 1
+;;
+esac
+exit $?
+#######################################################################################
+
+#Once you have this shell script in place, you can simply start and stop the xvfb server easily with:
+sudo /etc/init.d/xvfb start    # (or sudo service xvfb start)
+sudo /etc/init.d/xvfb stop
+#Great!
+
 #I’ll assume that you did the apt-get install to get both Firefox and flash-plugin. Once you have those, test the configuration like this…
 
 #Make sure that the xvfb server is running
