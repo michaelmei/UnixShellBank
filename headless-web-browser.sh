@@ -91,6 +91,8 @@ sudo /etc/init.d/xvfb stop
 #Run this: 
 DISPLAY=:5 nohup firefox http://www.youtube.com &
 nohup google-chrome --display=$DISPLAY --screenshots https://www.google.com &
+sudo nohup google-chrome -display=:1 --user-data-dir=/root/chrome-profile --no-default-browser-check --disable-breakpad https://www.google.com &
+
  
 #Explanation:
 #DISPLAY=:5 This tells xvfb to render to display 5 (virtual) nohup silence the output firefox loads firefox http://youtube.com loads youtube which tells you whether you have Flash or not & Load this in the background
@@ -109,3 +111,5 @@ DISPLAY=:5 import -window root screenshot.png
 #https://sites.google.com/site/mygwtexamples/home/testing/headless-running
 
 #http://elementalselenium.com/tips/29-chrome-driver
+
+
