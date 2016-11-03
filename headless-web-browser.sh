@@ -91,7 +91,7 @@ sudo /etc/init.d/xvfb stop
 #Run this: 
 DISPLAY=:5 nohup firefox http://www.youtube.com &
 nohup google-chrome --display=$DISPLAY --screenshots https://www.google.com &
-sudo nohup google-chrome -display=:1 --user-data-dir=/root/chrome-profile --no-default-browser-check --disable-breakpad --disable-translate https://www.google.com &
+sudo nohup google-chrome -display=:1 --allow-running-insecure-content --user-data-dir=/root/chrome-profile --no-default-browser-check --disable-breakpad --disable-translate https://www.google.com &
 
  
 #Explanation:
