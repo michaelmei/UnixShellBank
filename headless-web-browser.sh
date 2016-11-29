@@ -91,7 +91,16 @@ sudo /etc/init.d/xvfb stop
 #Run this: 
 DISPLAY=:5 nohup firefox http://www.youtube.com &
 nohup google-chrome --display=$DISPLAY --screenshots https://www.google.com &
-sudo nohup google-chrome -display=:1 --allow-running-insecure-content --user-data-dir=/root/chrome-profile --no-default-browser-check --disable-breakpad --disable-translate https://www.google.com &
+
+#Advanced usage
+sudo nohup google-chrome 
+-display=:1 
+--allow-running-insecure-content 
+--user-data-dir=/root/chrome-profile 
+--no-default-browser-check 
+--disable-breakpad 
+--disable-translate 
+https://www.google.com > chromelog &
 
  
 #Explanation:
@@ -99,11 +108,10 @@ sudo nohup google-chrome -display=:1 --allow-running-insecure-content --user-dat
 #Firefox should be running in the background now. If it’s not, you may have to debug and find out why. Remove the nohup and the & to see the output to shell if you need to debug.
 #Now comes the moment of truth. Taking a screenshot:
 
-
-DISPLAY=:5 import -window root screenshot.png
 #This will dump the desktop to screenshot.png. Check it.
-#Kill firefox by typing fg then CTRL+C.
+DISPLAY=:5 import -window root screenshot.png
 
+#Kill firefox by typing fg then CTRL+C.
 
 #http://peter.sh/experiments/chromium-command-line-switches/
 #chromium --load-extension
