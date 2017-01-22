@@ -103,6 +103,7 @@ sudo nohup google-chrome \
 --disable-translate \
 --always-authorize-plugins \
 --always-on \
+--restore-last-session=false \
 https://www.google.com > chromelog &
 
  
