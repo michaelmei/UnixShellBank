@@ -94,7 +94,7 @@ nohup google-chrome --display=$DISPLAY --screenshots https://www.google.com &
 
 #Advanced usage
 sudo nohup google-chrome \
--display=:1 \
+-display=:5 \
 --allow-running-insecure-content \
 --user-data-dir=/root/chrome-profile \
 --no-default-browser-check \
