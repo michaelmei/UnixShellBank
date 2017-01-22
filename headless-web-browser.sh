@@ -43,7 +43,7 @@ XVFB_OPTIONS=":5 -screen 0 1080x1440x24 -fbdir /var/run"
 
 start()  {
 echo -n "Starting : X Virtual Frame Buffer "
-$XVFB $XVFB_OPTIONS >>$XVFB_OUTPUT 2>&1&;
+$XVFB $XVFB_OPTIONS >>$XVFB_OUTPUT 2>&1&; #remove ; if necessary
 RETVAL=$?
 echo
 return $RETVAL
@@ -100,6 +100,7 @@ sudo nohup google-chrome \
 --no-default-browser-check \
 --disable-breakpad \
 --disable-translate \
+--always-authorize-plugins \
 https://www.google.com > chromelog &
 
  
