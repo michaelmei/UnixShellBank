@@ -102,6 +102,7 @@ sudo nohup google-chrome \
 --disable-breakpad \
 --disable-translate \
 --always-authorize-plugins \
+--always-on \
 https://www.google.com > chromelog &
 
  
