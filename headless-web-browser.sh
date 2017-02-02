@@ -103,8 +103,8 @@ sudo nohup google-chrome \
 --disable-translate \
 --always-authorize-plugins \
 --always-on \
+--restore-last-session \
 https://www.google.com > chromelog &
-
  
 #Explanation:
 #DISPLAY=:5 This tells xvfb to render to display 5 (virtual) nohup silence the output firefox loads firefox http://youtube.com loads youtube which tells you whether you have Flash or not & Load this in the background
