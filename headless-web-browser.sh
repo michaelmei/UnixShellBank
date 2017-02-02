@@ -103,7 +103,7 @@ sudo nohup google-chrome \
 --disable-translate \
 --always-authorize-plugins \
 --always-on \
---kiosk --disable-infobars \
+--kiosk --incognito \
 https://www.google.com > chromelog &
 
  
