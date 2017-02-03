@@ -103,7 +103,8 @@ sudo nohup google-chrome \
 --disable-translate \
 --always-authorize-plugins \
 --always-on \
---restore-last-session \
+--disable-infobars \
+--disable-session-crashed-bubble \
 https://www.google.com > chromelog &
  
 #Explanation:
