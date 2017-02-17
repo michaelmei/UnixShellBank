@@ -125,3 +125,10 @@ DISPLAY=:5 import -window root screenshot.png
 #http://elementalselenium.com/tips/29-chrome-driver
 
 
+#TO RESTART A CHROME WINDOW
+ps -ef | grep "google" | grep -v "grep" | awk '{print $2}' | xargs sudo kill -9
+sudo google-chrome --display=:5 --user-data-dir=/root/chrome-profile  
+--load-extension=/home/ubuntu/chromePlugin --allow-running-insecure-content 
+--no-default-browser-check --disable-breakpad --disable-translate 
+--always-authorize-plugins --always-on --disable-session-crashed-bubble &
+
