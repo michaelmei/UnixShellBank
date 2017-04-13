@@ -94,6 +94,7 @@ nohup google-chrome --display=$DISPLAY --screenshots https://www.google.com &
 
 #Advanced usage
 sudo nohup google-chrome \
+--no-sandbox \
 --display=:5 \
 --load-extension={directory} \
 --allow-running-insecure-content \
