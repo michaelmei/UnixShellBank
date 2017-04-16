@@ -27,5 +27,5 @@ java -version
 sudo apt-get install oracle-java8-set-default
 
 ################# gradle #############
-
+sudo apt-get install unzip
 wget https://services.gradle.org/distributions/gradle-2.13-bin.zip
