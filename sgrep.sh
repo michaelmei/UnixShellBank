@@ -28,7 +28,7 @@ tLen=${#LINE_NUMBERS[@]}
 loopNo=0
 
 # use for loop read all nameservers
-for (( i=tLen-1; i>=0; i-- ));
+for (( i=$tLen-1; i>=0; i-- ));
 do
   echo "************* $loopNo/$tLen ***************"
         TMP_LN=${LINE_NUMBERS[$i]}
