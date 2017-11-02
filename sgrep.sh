@@ -28,19 +28,19 @@ tLen=${#LINE_NUMBERS[@]}
 loopNo=0
 
 # use for loop read all nameservers
-for (( i=0; i<$tLen; i++ ));
+for (( i=tLen-1; i>=0; i-- ));
 do
-  echo "************* $i ***************"
-	TMP_LN=${LINE_NUMBERS[$i]}
-	HEAD_LENGTH=`expr $TMP_LN + $CAT_LN`
+  echo "************* $loopNo/$tLen ***************"
+        TMP_LN=${LINE_NUMBERS[$i]}
+        HEAD_LENGTH=`expr $TMP_LN + $CAT_LN`
         TAIL_LENGTH=`expr $CAT_LN + 1`
 
         #echo "head -n $HEAD_LENGTH $FILE | tail -n $TAIL_LENGTH"
         head -n $HEAD_LENGTH $FILE | tail -n $TAIL_LENGTH
 
-	loopNo=`expr $loopNo + 1`
-	if [ $loopNo -eq $LIMIT ]
-   	then
-      		break
-   	fi
+        loopNo=`expr $loopNo + 1`
+        if [ $loopNo -eq $LIMIT ]
+        then
+                break
+        fi
 done
