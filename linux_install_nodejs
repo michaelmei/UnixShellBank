@@ -25,7 +25,22 @@ curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
 #Step 2: Install node.js and NPM
 yum install nodejs
 
-#Step 3: Verify versions
+##################################################################
+########### Finalize and testing
+##################################################################
+
+#Step 3: Upgrade/Verify versions
+
+#the module n makes version-management easy:
+sudo npm install n -g
+sudo n 0.12.2
+
+#For the latest stable version of node js
+sudo n stable
+#For the latest version of node js
+sudo n latest
+
+#Check the version
 node -v 
 npm -v 
 
