@@ -25,6 +25,12 @@ curl -sL https://rpm.nodesource.com/setup_8.x | sudo -E bash -
 #Step 2: Install node.js and NPM
 yum install nodejs
 
+#Step 2: when complaining about the node version conflict with old version
+rm -f /etc/yum.repos.d/nodesource-el.repo
+yum clean all
+yum -y remove nodejs
+yum -y install nodejs
+
 ##################################################################
 ########### Finalize and testing
 ##################################################################
