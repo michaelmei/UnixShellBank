@@ -1,0 +1,42 @@
+##################################################################
+########### Debian and Ubuntu based Linux distributions
+##################################################################
+
+### for node 8
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+### for node 10
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+### To compile and install native addons from npm you may also need to install build tools:
+sudo apt-get install -y build-essential
+
+
+##################################################################
+########### Amazon AMI/Redhat CentOS
+##################################################################
+
+#Step 1: Add node.js yum repository
+yum install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+
+#Step 2: Install node.js and NPM
+yum install nodejs
+
+#Step 3: Verify versions
+node -v 
+npm -v 
+
+#Step 4: Testing the installation
+vim test_server.js
+
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Welcome');
+}).listen(3001, "127.0.0.1");
+console.log('Server running at http://127.0.0.1:3001/');
+
+node --debug test_server.js
