@@ -55,3 +55,6 @@ http.createServer(function (req, res) {
 console.log('Server running at http://127.0.0.1:3001/');
 
 node --debug test_server.js
+
+
+sudo npm install -g puppeteer --unsafe-perm=true
