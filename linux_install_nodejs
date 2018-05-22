@@ -58,3 +58,4 @@ node --debug test_server.js
 
 
 sudo npm install -g puppeteer --unsafe-perm=true
+sudo npm i puppeteer --unsafe-perm=true
