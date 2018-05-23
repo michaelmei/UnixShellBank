@@ -69,6 +69,30 @@ node --debug test_server.js
 sudo npm install -g puppeteer --unsafe-perm=true
 sudo npm i puppeteer --unsafe-perm=true
 
+########################################################################
+################## UBUNTU TROUBLE SHOOTING #################
+########################################################################
+
+### TOUBLESHOOT: [0509/163819.806050:ERROR:icu_util.cc(133)] Invalid file descriptor to ICU data received.
+
+### The issue is permissions of the directories/files.
+### When puppeteer was installed, the permissions were default owner of nobody:<usergroup> but not all files had group or others bits set (i.e. 600 or 700)
+### Puppeteer was installed as npm install -g puppeteer and it is run as the local user.
+
+### The fix was to chmod the files to set the group and others bits to match the "users".
+
+### I left the ownership as what it was - nobody:<usergroup>
+
+### 755 for directories
+### 755 for executable files
+### 644 for all other files
+### I am unsure if the nobody:<usergroup> ownership is a bad situation.
+
+cd /usr/local/lib/node_modules/puppeteer/.local-chromium
+find . -type d | xargs -L1 -Ixx sudo chmod 755 xx
+find . -type f -perm /u+x | xargs -L1 -Ixx sudo chmod 755 xx
+find . -type f -not -perm /u+x | xargs -L1 -Ixx sudo chmod 644 xx
+
 
 ################## DOCKER #####################
 
