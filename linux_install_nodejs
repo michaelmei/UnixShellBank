@@ -93,6 +93,10 @@ find . -type d | xargs -L1 -Ixx sudo chmod 755 xx
 find . -type f -perm /u+x | xargs -L1 -Ixx sudo chmod 755 xx
 find . -type f -not -perm /u+x | xargs -L1 -Ixx sudo chmod 644 xx
 
+### install chinese characters (ubuntu)
+sudo apt-get install fonts-wqy-zenhei
+sudo apt-get install fonts-arphic-bkai00mp fonts-arphic-bsmi00lp fonts-arphic-gbsn00lp fonts-arphic-gkai00mp fonts-arphic-ukai fonts-arphic-uming fonts-cns11643-kai fonts-cns11643-sung fonts-cwtex-fs fonts-cwtex-heib fonts-cwtex-kai fonts-cwtex-ming fonts-cwtex-yen
+
 
 ################## DOCKER #####################
 
