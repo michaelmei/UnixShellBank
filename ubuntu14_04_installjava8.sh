@@ -26,6 +26,10 @@ java -version
 
 sudo apt-get install oracle-java8-set-default
 
+############# MANUAL INSTALL 
+
+https://www.vultr.com/docs/how-to-manually-install-java-8-on-ubuntu-16-04
+
 ################# gradle #############
 sudo apt-get install unzip
 wget https://services.gradle.org/distributions/gradle-2.13-bin.zip
