@@ -139,5 +139,5 @@ ps -ef | grep "google" | grep -v "grep" | awk '{print $2}' | xargs sudo kill -9 
 sudo google-chrome --display=:5 --user-data-dir=/root/chrome-profile --allow-running-insecure-content \
 --no-default-browser-check --disable-breakpad --disable-translate \
 --always-authorize-plugins --always-on --no-sandbox --disable-session-crashed-bubble \
---screenshots "https://www.realestate.com.au/property/39-burwood-rd-whitebridge-nsw-2290?pid=p4ep-pdp|sold-pdp:property-history-cta#timeline" & \
+--screenshots "{Your URL}" & \
 DISPLAY=:5 import -window root screenshot.png
