@@ -1,0 +1,49 @@
+********************************************************************************************************************
+INSTALL JUPYTER NOTEBOOK
+********************************************************************************************************************
+
+sudo apt-get install wget
+wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh
+bash Anaconda3-4.0.0-Linux-x86_64.sh
+source ~/.bashrc
+pip install --upgrade pip
+python3
+ls ~/.jupyter/jupyter_notebook_config.py
+jupyter notebook --generate-config
+
+# set "port"="6688" and "ip"="*" and "use_browser"="False"
+vi ~/.jupyter/jupyter_notebook_config.py
+nohup jupyter-notebook --no-browser --port=6688 &
+
+
+
+********************************************************************************************************************
+Virtual Environment with Anaconda
+********************************************************************************************************************
+
+To create a virtual environment, we only need to run the following code.
+> conda create -n {myenv} python=3.6
+
+To use the virtual environment, we need to activate that virtual environment. We can do that by running the following code.
+> source activate {myenv}
+
+If you have finished the task, you might want to get out of the virtual environment by running the following code.
+> source deactivate
+
+List VENVs
+> conda env list
+
+Remove VENV
+> conda env remove -n {myenv}
+
+
+*** Adding Virtual Environment in Jupyter Notebook
+
+First, activate your virtual environment and run this code.
+> pip install --user ipykernel
+
+We need to manually add the kernel if we want to have the virtual environment in the Jupyter Notebook. That is why we need to add it by running this code.
+> python -m ipykernel install --user --name=myenv
+
+If you have finished with the virtual environment and did not need it anymore, you could remove it using this code.
+> jupyter kernelspec uninstall myenv
