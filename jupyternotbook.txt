@@ -11,7 +11,7 @@ python3
 ls ~/.jupyter/jupyter_notebook_config.py
 jupyter notebook --generate-config
 
-# set "port"="6688" and "ip"="*" and "use_browser"="False"
+# set "port"="6688" and "ip"="*" and "open_browser"="False"
 vi ~/.jupyter/jupyter_notebook_config.py
 nohup jupyter-notebook --no-browser --port=6688 &
 
